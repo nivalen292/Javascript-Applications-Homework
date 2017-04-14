@@ -1,7 +1,9 @@
 var promise = new Promise((resolve, reject) => {
-    setTimeout(resolve, 2000);
+    setTimeout(function() {
+        resolve("http://telerikacademy.com/");
+    }, 2000);
 });
 
-promise.then(() => {
-    window.location.replace("http://telerikacademy.com/");
+promise.then((value) => {
+    window.location.replace(value);
 });
